@@ -4,14 +4,14 @@ const nextConfig = {
   env: {
     API_BASE_URL: process.env.API_BASE_URL || (
       process.env.NODE_ENV === 'production' 
-        ? 'https://api.automationscout.com'  
+        ? 'http://localhost:3003'  // For now, use localhost - will be updated for production
         : 'http://localhost:3003'
     )
   },
   async rewrites() {
     const apiUrl = process.env.API_BASE_URL || (
       process.env.NODE_ENV === 'production' 
-        ? 'https://api.automationscout.com' 
+        ? 'http://localhost:3003'  // For now, use localhost - will be updated for production
         : 'http://localhost:3003'
     );
     
