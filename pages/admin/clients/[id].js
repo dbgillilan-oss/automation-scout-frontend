@@ -5,6 +5,11 @@ import { clients } from '../../../lib/api';
 import Link from 'next/link';
 import Head from 'next/head';
 
+// Disable static generation
+export async function getServerSideProps() {
+  return { props: {} };
+}
+
 export default function ClientDetail() {
   const router = useRouter();
   const { id } = router.query;

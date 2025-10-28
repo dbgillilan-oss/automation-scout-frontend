@@ -1,7 +1,11 @@
-import { useState } from 'react';
+import { useState, useEffect } from 'react';
 import { useAuth } from '../lib/useAuth';
 import { useRouter } from 'next/router';
-import { useEffect } from 'react';
+
+// Disable static generation  
+export async function getServerSideProps() {
+  return { props: {} };
+}
 
 export default function Login() {
   const [username, setUsername] = useState('');

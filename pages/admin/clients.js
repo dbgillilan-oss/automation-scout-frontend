@@ -4,6 +4,11 @@ import { clients } from '../../lib/api';
 import Link from 'next/link';
 import Head from 'next/head';
 
+// Disable static generation
+export async function getServerSideProps() {
+  return { props: {} };
+}
+
 export default function AdminClients() {
   const { isAuthenticated, user, loading } = useAuth();
   const [clientList, setClientList] = useState([]);
